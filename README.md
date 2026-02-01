@@ -62,6 +62,3 @@ Task-Manager/
   isComplete: false
 }
 
-
-## 📂 Project Structure
-

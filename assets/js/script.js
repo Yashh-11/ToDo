@@ -15,7 +15,6 @@ todo.addEventListener('submit', (e) => {
     }
 
     list.push(obj);
-    // console.log(list);
     table();
 })
 
@@ -27,16 +26,20 @@ const table = () => {
             <td>${index + 1}</td>
             <td>${data.title}</td>
             <td>${data.description}</td>
-            <td><button class="btn btn-outline-danger delete">Delete</button><button class="btn btn-outline-warning ms-3">Edit</button></td>
+            <td>
+            <button type="button" class="btn btn-outline-danger" onclick="handleDelete(${data.id})">Delete</button>
+            <button class="btn btn-outline-warning ms-3">Edit</button></td>
         `;
         display.appendChild(row);
     });
 }
-
+table();
 // let deleteBtn = document.querySelector('tbody .delete');
-// let handleDelete = (id) => {
-//     let newList = list.filter(value => value.id != id);
-//     list = newList;
-//     table();
-// }
+let handleDelete = (id) => {
+    console.log(list);
+    
+    let newList = list.filter(value => value.id != id);
+    list = newList;
+    table();
+}
 
